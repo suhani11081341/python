@@ -1,0 +1,17 @@
+"""
+instance attribute in oops
+"""
+class cmpy:
+
+    def __init__(self):
+        self.emp = []
+
+    def add_pet(self,emp):
+        self.emp.append(emp)
+
+emp1= cmpy()
+emp2= cmpy()
+
+emp1.add_pet("suhani")
+print(emp1.emp)
+print(emp2.emp)
