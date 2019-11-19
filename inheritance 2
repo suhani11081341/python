@@ -1,0 +1,17 @@
+"""
+When we set an attribute on an instance which has the same name as a class attribute, 
+we are overriding the class attribute with an instance attribute, 
+which will take precedence over it
+"""
+class cmpy:
+    emp = []
+
+    def add_emp(self, emp):
+        self.emp.append(emp)
+
+emp1 = cmpy()
+emp2 = cmpy()
+
+emp1.add_emp("suhani")
+print(emp1.emp)
+print(emp2.emp) # oops
