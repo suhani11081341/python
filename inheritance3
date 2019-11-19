@@ -1,0 +1,24 @@
+see how class attribute get overriden by the instance attribute
+
+class room():
+    l=10
+    b=10
+    h=10
+    def __init__(self):
+        self.l=2
+        self.b=2
+        self.h=2
+    def getdata(self,l,b,h):
+        self.l=l
+        self.b=b
+        self.h=h
+    def volume(self):
+        volume=self.l*self.h*self.b
+        print(volume)
+
+r1=room()
+r1.volume()
+print(r1.__class__.l)
+r1.getdata(11,15,10)
+print(r1.volume())
+
