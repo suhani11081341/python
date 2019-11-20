@@ -1,0 +1,36 @@
+"""
+to count no of lines in file
+"""
+
+print("mtd1")
+f=open("filee.txt","r").read().split("\n")
+print(f)
+v=len(f)
+for i in f:
+    if i in [" ","","\n"]:
+        v-=1
+print(v)
+
+
+print("mtd2")
+f=open("filee.txt","r").readlines()
+v1=len(f)
+print(v1)
+for i in f:
+    if i in [" ","","\n"]:
+        v1-=1
+print(v1)
+
+
+
+print("mtd3")
+f=open("filee.txt","r")
+i=f.readline()
+v2=0
+while i!="":
+   if i not in [" ","","\n"]:
+        v2+=1
+        i=f.readline()
+print(v2)
+  
+    
