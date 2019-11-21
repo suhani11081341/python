@@ -1,0 +1,21 @@
+three methods of replacing two words simultaneously with each other
+
+
+import re
+s = "The scary ghost ordered an expensive steak"
+sub_dict = {'ghost':'steak','steak':'ghost'}
+regex = '|'.join(sub_dict)
+print(re.sub(regex, lambda m: sub_dict[m.group()], s))
+'The scary steak ordered an expensive ghost'
+
+s="The scary ghost steak ordered  ghost an expensive steak"
+print (s)s=s.replace("steak","temp")
+s=s.replace("ghost","steak")
+s=s.replace("temp","ghost")
+print (s)
+
+s="The scary ghost steak ordered  ghost an expensive steak"
+print (s)
+pieces = s.split('steak')
+s = 'ghost'.join(piece.replace('ghost', 'steak') for piece in pieces)
+
