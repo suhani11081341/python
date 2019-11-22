@@ -1,0 +1,24 @@
+Local Variables
+
+When you declare variables inside a function definition, they are not related in any way to other variables with the same names used outside the function - i.e. variable names are local to the function. This is called the scope of the variable. All variables have the scope of the block they are declared in starting from the point of definition of the name.
+
+Example (save as function_local.py):
+
+x = 50
+
+
+def func(x):
+    print('x is', x)
+    x = 2
+    print('Changed local x to', x)
+
+
+func(x)
+print('x is still', x)
+
+Output:
+
+$ python function_local.py
+x is 50
+Changed local x to 2
+x is still 50
