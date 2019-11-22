@@ -1,0 +1,232 @@
+Python format function
+
+You can invoke format function in one of the following ways:
+Single argument formatting
+
+The simplest case while calling the Python format function is to have a single formatter. Below is the syntax to use it.
+
+Format syntax : '{}'.format(param)
+
+* Description:
+** '{}': It is the format target, i.e., the placeholder.
+** param: It can be a string, integer, float, or any of the collection types.
+** Return: It returns a formatted output with the input argument substituting the placeholder.
+
+See a quick illustration:
+
+>>> '{}'.format('Formatting a String in Python')
+'Formatting a String in Python'
+
+Multiple arguments formatting
+
+A slightly complicated way to call the Python format function is to supply more than one formatter at a time. Below is the syntax to use it.
+
+Format syntax : '{} {}'.format(arg1, arg2)
+
+* Description:
+** '{} {}': We can have multiple placeholders.
+** arg1, arg2: They can be a string, integer, float, or any of the collection types.
+** Return: It returns a formatted output with the input argument substituting the placeholder.
+
+See a quick illustration:
+
+>>> '{} {}'.format('Python', 'Format')
+'Python Format'
+
+Format a Python string
+Basic string formatting
+
+Print a single string using the format function.
+
+>>> test = "Hello"
+>>> print('{}'.format(test))
+Hello
+
+Combine two string literals and print them using the format function.
+
+>>> first = "Hello"
+>>> second = "World"
+>>> print('{} {}'.format(first, second))
+Hello World
+
+Padding and align strings
+
+We can also use the Python format function to allow padding.
+
+Its purpose is to align a string either using a space or some value. You need to provide the length for the alignment which should be higher than the size of the target string.
+
+It is because the alignment can only occur in a box of fixed length.
+
+Let’s align a string to the right with spaces.
+
+>>> print(format("Hello", ">10s"))
+     Hello
+
+Now, let’s do the same operation using the ‘#’ character.
+
+>>> print(format("Hello", "#>10s"))
+#####Hello
+
+Here is a brief description of the above steps.
+
+    You can see that the box length for printing the string is 10.
+    It means the max we can accommodate the ten characters.
+    The word “Hello” itself has five letters and the ‘#’ gets filled at the remaining five places.
+    You might have observed the “>” symbol in the format syntax. It makes our target string to move to the right side.
+
+If you like to align the target string from the left, then use the ‘<‘ symbol.
+
+>>> print(format("Hello", "#<10s"))
+Hello#####
+
+You can even make a string center-aligned inside a fixed-length box.
+
+>>> print(format("Hello", "#^15s"))
+#####Hello#####
+
+The carat ‘^’ sign makes the string format to the center.
+Justify a variable string expansion
+
+In the below example, we demonstrate the variable string expansion and justifies it.
+
+>>> print('<-- {0:30} -->'.format('Python Programming'))
+<-- Python Programming             -->
+>>> print('<-- {0:>30} -->'.format('Python Programming'))
+<--             Python Programming -->
+>>> print('<-- {0:<30} -->'.format('Python Programming'))
+<-- Python Programming             -->
+>>> print('<-- {0:^30} -->'.format('Python Programming'))
+<--       Python Programming       -->
+
+Format integers
+
+There are many ways to format an Integer, let’s see the basic usage first.
+
+>>> print("I've <{}> years of experience and my salary is <{}> USD per annum.".format(10, 75000))
+I've <10> years of experience and my salary is <75000> USD per annum.
+
+Using separator number formatting
+
+It is a standard convention to display the salary with commas. Python format function supports this representation and requires a pair of ‘:’ and ‘,’ inside the parenthesis.
+
+>>> print("I've <{}> years of experience and my salary is <{:,}> USD per annum.".format(10, 75000))
+I've <10> years of experience and my salary is <75,000> USD per annum.
+
+Specify field width for numbers
+
+Same as we did for strings is applicable for the integers. For integers, we can’t use precision.
+
+>>> print("I've <{:5}> years of experience and my salary is <{:15,}> USD per annum.".format(10, 75000))
+I've <   10> years of experience and my salary is <         75,000> USD per annum.
+
+Padding for numbers
+
+While specifying the width for integers, you can use a character for padding the space left vacant after printing the subject.
+
+>>> print("I've <{:#>8}> years of experience and my salary is <{:z>20,}> USD per annum.".format(10, 75000))
+I've <######10> years of experience and my salary is <zzzzzzzzzzzzzz75,000> USD per annum.
+
+Format a number as binary
+
+Python format function allows printing a number in binary style. The symbol ‘b’ after the colon inside the parenthesis notifies to display a number in binary format.
+
+>>> print('{0:b}'.format(10))
+1010
+
+Format a number as octal
+
+Python format function allows printing an integer in the octal style. The symbol ‘o’ after the colon inside the parenthesis notifies to display a number in octal format.
+
+>>> print('{0:o}'.format(10))
+12
+
+Format a number as hex
+
+Python format function allows printing an integer in the hex style. The symbol ‘x’ or ‘X’ after the colon inside the parenthesis notifies to display a number in hex format.
+
+>>> print('{0:x}'.format(10))
+a
+>>> 
+>>> 
+>>> print('{0:X}'.format(10))
+A
+
+Representing a float number
+
+A float data type also has a couple of variations which you can style using the Python format function.
+Simple example
+
+Let’s print a full floating point number.
+
+>>> print("{0:f}".format(1.123456))
+1.123456
+
+Now, let’s print a floating point number truncating after three decimal points.
+
+>>> print("{0:.3f}".format(1.123456))
+1.123
+
+Finally, let’s print a floating point number which truncates after three decimal places but does round the final value.
+
+>>> print("{0:.3f}".format(1.123556))
+1.124
+
+Fixed point
+
+>>> print('Fixed-point example: <{0:f}>'.format(2.2183))
+Fixed-point example: <2.218300>
+>>> print('Fixed-point with right alignment example: <{0:25f}>'.format(2.2183))
+Fixed-point with right alignment example: <                 2.218300>
+>>> print('Fixed-point with precision and right alignment example: <{0:<25.10f}>'.format(2.2183))
+Fixed-point with precision and right alignment example: <2.2183000000             >
+
+General
+
+>>> print('General format example: <{0:g}>'.format(2.2183))
+General format example: <2.2183>
+>>> print('General format with right alignment example: <{0:25g}>'.format(2.2183))
+General format with right alignment example: <                   2.2183>
+>>> print('General format with precision and center alignment example: <{0:^25.10g}>'.format(2.2183))
+General format with precision and center alignment example: <         2.2183          >
+
+Scientific
+
+>>> print('Scientific format example: <{0:e}>'.format(2.2183))
+Scientific format example: <2.218300e+00>
+>>> print('Scientific format with left alignment example: <{0:<25e}>'.format(2.2183))
+Scientific format with left alignment example: <2.218300e+00             >
+>>> print('General format with precision and right alignment example: <{0:>25.5e}>'.format(2.2183))
+General format with precision and right alignment example: <              2.21830e+00>
+
+Format lists and dictionaries
+Formatting a list in Python
+
+The Python format method accepts a sequence of positional parameters. If we pass an array or a List, then let’s find out the result.
+
+>>> langs = ['C', 'C++', 'CSharp']
+>>> print('Skillset: {}'.format(langs))
+Skillset: ['C', 'C++', 'CSharp']
+
+The whole list gets displayed. You can also decide to print one item from the sequence by providing its index.
+
+>>> print('Skillset: {0[1]}'.format(langs))
+Skillset: C++
+
+You can even send the list item as the positional parameters. To achieve this, unpack them using the * operator.
+
+>>> print('Skillset: {}'.format(*langs))
+Skillset: C
+
+Formatting a dict in Python
+
+Format function allows using a dictionary as a parameter. See the below example.
+
+>>> print(" Jake's salary is {0[jake]} \n Anand's salary is {0[anand]}".format({'jake': '$100K', 'anand': '$120K'}))
+Jake's salary is $100K 
+Anand's salary is $120K
+
+You can format dictionary data using the keyworded arguments.
+
+>>> print(" Jake's salary is {sal[jake]} \n Anand's salary is {sal[anand]}".format(sal={'jake': '$100K', 'anand': '$120K'}))
+Jake's salary is $100K 
+Anand's salary is $120K
