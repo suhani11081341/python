@@ -72,7 +72,6 @@ class Mapping:
      # private copy of original update() method
 
 class MappingSubclass(Mapping):
-
     def update(self, keys, values, iterable):
         # provides new signature for update()
         # but does not break __init__()
