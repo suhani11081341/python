@@ -1,0 +1,156 @@
+"""""""
+small small chnges what does in code
+"""""""
+really intresting example of
+inheritance with method overriding
+class Mapping:
+    def __init__(self, iterable):
+        self.items_list = []
+        self.__update(iterable)
+
+    def update(self, iterable):
+        for item in iterable:
+            self.items_list.append(item)
+
+    __update = update   # private copy of original update() method
+
+class MappingSubclass(Mapping):
+
+    def update(self, keys, values):
+        # provides new signature for update()
+        # but does not break __init__()
+        for item in zip(keys, values):
+            self.items_list.append(item)
+
+
+l=[1,2,3]
+l1=["name","age"]
+l2=["suhani",29]
+m=MappingSubclass(l)
+m.update(l1,l2)
+print(m.items_list)
+
+
+print("style 2")
+
+class Mapping:
+    def __init__(self, iterable):
+        self.items_list = []
+        Mapping.update(self,iterable)
+
+    def update(self, iterable):
+        for item in iterable:
+            self.items_list.append(item)
+
+     # private copy of original update() method
+
+class MappingSubclass(Mapping):
+
+    def update(self, keys, values):
+        # provides new signature for update()
+        # but does not break __init__()
+        for item in zip(keys, values):
+            self.items_list.append(item)
+
+
+l=[1,2,3]
+l1=["name","age"]
+l2=["suhani",29]
+m=MappingSubclass(l)
+m.update(l1,l2)
+print(m.items_list)
+
+
+
+print("style 3")
+
+class Mapping:
+    def __init__(self):
+        self.items_list = []
+        
+
+    def update(self, iterable):
+        for item in iterable:
+            self.items_list.append(item)
+
+     # private copy of original update() method
+
+class MappingSubclass(Mapping):
+
+    def update(self, keys, values, iterable):
+        # provides new signature for update()
+        # but does not break __init__()
+        Mapping.update(self,iterable)
+        for item in zip(keys, values):
+            self.items_list.append(item)
+
+
+l=[1,2,3]
+l1=["name","age"]
+l2=["suhani",29]
+m=MappingSubclass()
+m.update(l,l1,l2)
+print(m.items_list)
+
+
+print("style 4")
+
+class Mapping:
+    def __init__(self):
+        self.items_list = []
+        
+
+    def update(self, iterable):
+        for item in iterable:
+            self.items_list.append(item)
+
+     # private copy of original update() method
+
+class MappingSubclass(Mapping):
+
+    def update(self, keys, values, iterable):
+        # provides new signature for update()
+        # but does not break __init__()
+        super().update(iterable)
+        for item in zip(keys, values):
+            self.items_list.append(item)
+
+
+l=[1,2,3]
+l1=["name","age"]
+l2=["suhani",29]
+m=MappingSubclass()
+m.update(l,l1,l2)
+print(m.items_list)
+
+
+print("style 5")
+
+class Mapping:
+    items_list=[]
+       
+        
+    @staticmethod
+    def update(iterable):
+        for item in iterable:
+            Mapping.items_list.append(item)
+
+     # private copy of original update() method
+
+class MappingSubclass(Mapping):
+
+    def update(self, keys, values, iterable):
+        # provides new signature for update()
+        # but does not break __init__()
+        Mapping.update(iterable)
+        for item in zip(keys, values):
+            self.items_list.append(item)
+
+
+l=[1,2,3]
+l1=["name","age"]
+l2=["suhani",29]
+m=MappingSubclass()
+m.update(l,l1,l2)
+print(m.items_list)
+
