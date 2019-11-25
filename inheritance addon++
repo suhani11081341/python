@@ -1,8 +1,4 @@
-"""""""
-small small chnges what does in code
-"""""""
-really intresting example of
-inheritance with method overriding
+
 class Mapping:
     def __init__(self, iterable):
         self.items_list = []
@@ -89,7 +85,7 @@ l=[1,2,3]
 l1=["name","age"]
 l2=["suhani",2]
 m=MappingSubclass()
-m.update(l,l1,l2)
+m.update(l1,l2,l)
 print(m.items_list)
 
 
@@ -120,7 +116,7 @@ l=[1,2,3]
 l1=["name","age"]
 l2=["suhani",2]
 m=MappingSubclass()
-m.update(l,l1,l2)
+m.update(l1,l2,l)
 print(m.items_list)
 
 
@@ -151,6 +147,6 @@ l=[1,2,3]
 l1=["name","age"]
 l2=["suhani",2]
 m=MappingSubclass()
-m.update(l,l1,l2)
+m.update(l1,l2,l)
 print(m.items_list)
 
