@@ -25,7 +25,7 @@ class MappingSubclass(Mapping):
 
 l=[1,2,3]
 l1=["name","age"]
-l2=["suhani",29]
+l2=["suhani",2]
 m=MappingSubclass(l)
 m.update(l1,l2)
 print(m.items_list)
@@ -55,7 +55,7 @@ class MappingSubclass(Mapping):
 
 l=[1,2,3]
 l1=["name","age"]
-l2=["suhani",29]
+l2=["suhani",2]
 m=MappingSubclass(l)
 m.update(l1,l2)
 print(m.items_list)
@@ -87,7 +87,7 @@ class MappingSubclass(Mapping):
 
 l=[1,2,3]
 l1=["name","age"]
-l2=["suhani",29]
+l2=["suhani",2]
 m=MappingSubclass()
 m.update(l,l1,l2)
 print(m.items_list)
@@ -118,7 +118,7 @@ class MappingSubclass(Mapping):
 
 l=[1,2,3]
 l1=["name","age"]
-l2=["suhani",29]
+l2=["suhani",2]
 m=MappingSubclass()
 m.update(l,l1,l2)
 print(m.items_list)
@@ -149,7 +149,7 @@ class MappingSubclass(Mapping):
 
 l=[1,2,3]
 l1=["name","age"]
-l2=["suhani",29]
+l2=["suhani",2]
 m=MappingSubclass()
 m.update(l,l1,l2)
 print(m.items_list)
