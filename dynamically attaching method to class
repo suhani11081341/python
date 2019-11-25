@@ -1,0 +1,31 @@
+def foo():
+    print("foo")
+
+class A:
+     def bar( self ):
+        print("bar")
+     
+a = A()
+
+a.bar=foo
+
+(a.bar())
+b=A()
+(b.bar())
+
+
+
+def fooFighters( self ):
+    print ("fooFighters")
+
+A.fooFighters = fooFighters
+a2 = A()
+print(a2.fooFighters)
+a2.fooFighters()
+a.fooFighters()
+
+how to add attribute to function
+def f(x):
+    return 42+f.y
+f.x,f.y=72,20
+print(f.x,f(f.x))
