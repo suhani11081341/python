@@ -1,0 +1,19 @@
+trick to manipulate negative index of a string
+
+let us assume 
+ 
+>>> x="suhani rastogi"
+>>> len (x)
+14
+>>> x[0-len(x)]
+'s'
+>>> x[0]
+'s'
+notice the important relation to find the negative index of astring if you know its postive index
+
+let us say
+x[0]=s
+now we will be finding the negative index of x[0]
+will be
+oringial postive index - len(x)=0-14=-14
+so x[0]=x[-14]"s"
