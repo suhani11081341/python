@@ -1,0 +1,34 @@
+import calendar
+calendar.setfirstweekday(6)
+
+print(calendar.weekheader(8),calendar.calendar(2019),calendar.firstweekday(),calendar.leapdays(2019,2030))
+
+for i in range(2019,2031):
+    if calendar.isleap(i):
+        print (i)
+
+
+    
+calendar.prmonth(2019,12,1,2)
+
+calendar.prcal(2019)
+print(list(calendar.day_name))
+print(list(calendar.day_abbr))
+print(list(calendar.month_name))
+print(list(calendar.month_abbr))
+
+
+tc= calendar.TextCalendar(firstweekday=5)
+print(tc.pryear(2019,0,0,0,m=7))
+
+print(tc.formatyear(2019,0,0,0,m=7))
+
+
+import calendar,datetime
+from datetime import date 
+
+#set firstweekday=0
+
+cal= calendar.Calendar(firstweekday=datetime.date.today().weekday())
+for x in cal.iterweekdays():
+	print(x)
