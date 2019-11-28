@@ -1,0 +1,30 @@
+"""""
+Wap  to  find out the last date of every month of 2019 year
+"""""
+import datetime
+
+def last_day_of_month(any_day):
+    next_month = any_day.replace(day=28) + datetime.timedelta(days=4)
+    return next_month -datetime.timedelta(days=next_month.day)
+
+
+for month in range(1, 13):
+    print (last_day_of_month(datetime.date(2019, month, 1)))
+
+
+newYearEve2020 = datetime.datetime(2019, 12, 31, 12, 59, 59, 99)
+
+ 
+
+# Make it the next day by calling replace function
+
+newYearDate2020 = newYearEve2020.replace(2020, 1, 1, 00, 00, 00, 00)
+
+ 
+
+print("2020 New year's eve {}".format(newYearEve2020))
+
+print("2020 New year {}".format(newYearDate2020))
+
+
+
