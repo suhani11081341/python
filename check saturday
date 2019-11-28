@@ -1,0 +1,61 @@
+"""""
+check import datetime
+from calendar import Calendar
+cal = Calendar() # week starts Monday
+#cal = Calendar(6) # week stars Sunday
+list_=[]
+for i in range(1,13):
+   weeks = cal.monthdayscalendar(2019, i)
+   print(weeks,"\n")
+   if weeks[0][5]==0:
+      (list_.append(weeks[2][6]))
+   else:
+      (list_.append(weeks[1][6]))
+
+print(list_)
+
+date_=input("date to check for saturday dd/mm/yyyy")
+v=datetime.datetime.strptime(date_,"%d/%m/%Y")
+print(v.date(),list_[v.month-1])
+k=datetime.datetime(2019,v.month,list_[v.month-1])
+
+if v == k:
+    print ("second saturday")
+else:
+    print("not second saturday")
+
+if v.day == list_[v.month-1]:
+    print ("second saturday")
+else:
+    print("not second saturday")
+the second saturday is it
+"""""
+import datetime
+from calendar import Calendar
+cal = Calendar() # week starts Monday
+#cal = Calendar(6) # week stars Sunday
+list_=[]
+for i in range(1,13):
+   weeks = cal.monthdayscalendar(2019, i)
+   print(weeks,"\n")
+   if weeks[0][5]==0:
+      (list_.append(weeks[2][6]))
+   else:
+      (list_.append(weeks[1][6]))
+
+print(list_)
+
+date_=input("date to check for saturday dd/mm/yyyy")
+v=datetime.datetime.strptime(date_,"%d/%m/%Y")
+print(v.date(),list_[v.month-1])
+k=datetime.datetime(2019,v.month,list_[v.month-1])
+
+if v == k:
+    print ("second saturday")
+else:
+    print("not second saturday")
+
+if v.day == list_[v.month-1]:
+    print ("second saturday")
+else:
+    print("not second saturday")
