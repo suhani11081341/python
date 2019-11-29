@@ -1,0 +1,15 @@
+"""""""""
+dynamically creating label
+"""""""""
+
+import tkinter
+
+window = tkinter.Tk()
+window.title("GUI")
+
+# creating a function called say_hi()
+def say_hi():
+    tkinter.Label(window, text = "Hi ").pack()
+
+tkinter.Button(window, text = "Click Me!", command = say_hi).pack() 
+window.mainloop()
