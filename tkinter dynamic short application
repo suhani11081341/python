@@ -1,0 +1,25 @@
+mport tkinter as tk
+
+counter = 0
+root = tk.Tk()
+def counter_label(label):
+  def count():
+    global counter
+    if counter<100:
+        
+        counter += 1
+        label.config(text=str(counter))
+        label.after(50,count)
+    else:
+        root.destroy()
+  count()  
+ 
+ 
+
+root.title("Counting Seconds")
+label = tk.Label(root, fg="green")
+label.pack()
+counter_label(label)
+button = tk.Button(root, text='Stop', width=25, command=root.destroy)
+button.pack()
+root.mainloop()
