@@ -1,0 +1,22 @@
+try:
+    import tkinter
+except:
+    import TKINTER as tkinter
+
+win=tkinter.Tk(screenName="suhani")
+win.geometry("200x350")
+label=tkinter.Label(win,text="hello")
+label.grid(row=0,column=0)
+leftframe=tkinter.Frame(win)
+leftframe.grid(row=1,column=0)
+canvas=tkinter.Canvas(leftframe,relief="raised",borderwidth=2)
+canvas.grid(row=0,column=1)
+rightframe=tkinter.Frame(win)
+rightframe.grid(row=1,column=2)
+btn1=tkinter.Button(rightframe,text="buton1")
+btn2=tkinter.Button(rightframe,text="buton2")
+btn3=tkinter.Button(rightframe,text="buton3")
+btn1.grid(row=0,column=0)
+btn2.grid(row=1,column=0)
+btn3.grid(row=2,column=0)
+win.mainloop()
