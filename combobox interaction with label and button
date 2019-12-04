@@ -1,0 +1,41 @@
+
+from tkinter  import *
+from tkinter.ttk import *
+ 
+app = Tk() 
+app.geometry('200x100')
+
+labelTop = Label(app,
+                    text = "Choose your favourite month")
+labelTop.grid(column=0, row=0)
+
+def function():
+##    v=str(comboExample.get())
+##    print(v)
+    lbl.configure(text=comboExample.get())
+    
+comboExample =Combobox(app, values=[
+                                    "January", 
+                                    "February",
+                                    "March",
+                                    "April",
+                                    "May",
+                                    "June",
+                                    "July",
+                                    "August",
+                                    "September",
+                                    "October",
+                                    "November",
+                                    "December"])
+
+
+
+comboExample.bind("<<ComboSelected>>",function)
+comboExample.grid(column=0, row=1)
+comboExample.current(2)
+lbl=Label(app,text=comboExample.get())
+lbl.grid(column=1,row=2)
+print(comboExample.current(),comboExample.get())
+btn=Button(app,text="click nw",command=function)
+btn.grid(row=3,column=0)
+app.mainloop()
