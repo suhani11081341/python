@@ -1,0 +1,32 @@
+from tkinter import *
+from tkinter import messagebox
+window=Tk()
+window.title("welcome")
+window.geometry("350x250")
+
+def fnlogin():
+    nm=str(txtname.get())
+    print(nm)
+    messagebox.showinfo("login info","login successful.."+nm)
+
+def fncancel():
+    messagebox.showinfo("cancelinfo","quiting app")
+    window.destroy
+lblname=Label(window,text="username")
+lblname.grid(row=0,column=0)
+lblpass=Label(window,text="Password")
+lblpass.grid(row=1,column=0)
+txtname=Entry(window)
+
+txtname.insert(END, 'suhani')
+
+txtname.grid(row=0,column=1)
+txtpass=Entry(window,show="*")
+txtpass.grid(row=1,column=1)
+b1=Button(text="Login",command=fnlogin)
+b1.grid(row=2,column=0)
+b2=Button(text="Cancel",command=fncancel)
+b2.grid(row=2,column=1)
+window.mainloop()
+
+
