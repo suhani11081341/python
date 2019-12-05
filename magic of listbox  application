@@ -1,0 +1,46 @@
+from tkinter import *
+from tkinter.ttk import *
+window=Tk()
+window.geometry("200x300")
+window.title("listbox")
+parentlist=["om","two","three"]
+l1=Listbox()
+for item in parentlist:
+    l1.insert(END,item)
+l1.grid(row=0,column=0)
+l2=Listbox()
+l2.grid(row=0,column=1)
+def onselect(event):
+    w=event.widget
+    index=w.curselection()[0]
+    val=w.get(w.curselection())
+    print("you selceted:{0} and that variable value in {1}".format(index,val))
+    l2.insert(END,str(index)+""+val)
+l1.select=l1.bind("<<ListboxSelect>>",onselect)
+
+
+
+
+print("="*10)
+print("mtd2")
+from tkinter import *
+from tkinter.ttk import *
+window=Tk()
+window.geometry("200x300")
+window.title("listbox")
+parentlist=["om","two","three"]
+l1=Listbox()
+for item in parentlist:
+    l1.insert(END,item)
+l1.grid(row=0,column=0)
+l2=Listbox()
+l2.grid(row=0,column=1)
+def onselect(event):
+    w=event.widget
+    
+    index=w.curselection()
+    print(index,"index is")
+    val=w.get(w.curselection())
+    print("you selceted:{0} and that variable value in {1}".format(index,val))
+    l2.insert(END,val)
+l1.bind("<<ListboxSelect>>",onselect)
