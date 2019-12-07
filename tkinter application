@@ -1,0 +1,57 @@
++++++++++++++++++++++++++++++++++
+mtd1
+++++++++++++++++++++++++++++++++++
+from tkinter import *
+
+win=Tk()
+def click(btn):
+     btntext=btn.cget("text")
+     l4=Label(text=btntext)
+     l4.pack()
+win.geometry("400x500")
+b1=Button(width=400,height=200,compound=LEFT,text="sad",pady=10)
+b1.pack()
+photo=PhotoImage(file="deboo1.png").subsample(4, 4)
+b1.config(image=photo,command=lambda btn=b1:click(btn))
+b2=Button(width=400,height=200,compound=LEFT,text="happy")
+b2.pack()
+photo1=PhotoImage(file="deboo2.png").subsample(3, 3)
+b2.config(image=photo1,command=lambda btn=b2:click(btn))
+b3=Button(width=400,height=200,compound=LEFT,text="normal")
+b3.pack()
+photo2=PhotoImage(file="deboo3.png").subsample(3, 3)
+b3.config(image=photo2,command=lambda btn=b3:click(btn))
+
+
+win.mainloop()
+
+
+++++++++++++++++++++++++++++++++
+mtd2
+++++++++++++++++++++++++++++++++
+
+from tkinter import *
+from tkinter import messagebox
+
+win=Tk()
+win.title("emoji")
+
+def click(btn):
+     btntext=btn.cget("text")
+     l4=Label(text=btntext)
+     l4.pack()
+     messagebox.showinfo("mood info","user mood is:"+btntext)
+win.geometry("400x500")
+b1=Button(width=400,height=200,compound=LEFT,text="sad",pady=10)
+b1.pack()
+photo=PhotoImage(file="deboo.png").subsample(4, 4)
+b1.config(image=photo,command=lambda btn=b1:click(btn))
+b2=Button(width=400,height=200,compound=LEFT,text="happy")
+b2.pack()
+photo1=PhotoImage(file="deboo.png").subsample(3, 3)
+b2.config(image=photo1,command=lambda btn=b2:click(btn))
+b3=Button(width=400,height=200,compound=LEFT,text="normal")
+b3.pack()
+photo2=PhotoImage(file="deboo.png").subsample(3, 3)
+b3.config(image=photo2,command=lambda btn=b3:click(btn))
+win.mainloop()
