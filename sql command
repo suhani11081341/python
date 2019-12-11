@@ -1,0 +1,77 @@
+##
+##program1
+##import sqlite3
+##con=sqlite3.connect("inventory.sqlite")
+##c=con.cursor()
+##c.execute("create table if  not exists login (username text , password text)")
+##con.commit()
+##con.import sqlite3
+##
+##
+##program2
+##import sqlite3
+##con=sqlite3.connect("inventory.sqlite")
+##c=con.cursor()
+##username="abc"
+##pwd="abc"
+##c.execute("insert into login(username,password)values(?,?)",(username,pwd))
+##c.execute("insert into login(username,password)values(?,?)",("suhani","12345"))
+##con.commit()
+##con.close()
+##
+##
+##program3
+##
+##import sqlite3
+##con=sqlite3.connect("inventory.sqlite")
+##c=con.cursor()
+##username="abc"
+##pwd="abc"
+##c.execute("select * from login")
+##data=c.fetchall()
+##print(data)
+##print(" username=======password")
+##for row in data:
+##    print(row[0],"=======",row[1])
+##
+##con.commit()
+##con.close()
+##
+##print("program4")
+##
+##import sqlite3
+##con=sqlite3.connect("inventory.sqlite")
+##c=con.cursor()
+##username="abc"
+##pwd="abc"
+##username1="vibha"
+##pwd1="45678"
+##c.execute("update login set username=(?),password=(?) where username=(?) and password=(?)",(username1,pwd1,username,pwd))
+
+##con.commit()
+##con.close()
+##
+##
+##
+
+
+
+
+print("program5")
+
+import sqlite3
+con=sqlite3.connect("inventory.sqlite")
+c=con.cursor()
+username="abc"
+pwd="abc"
+username1="vibha"
+pwd1="45678"
+c.execute("delete from login  where username=(?) and password=(?)",(username1,pwd1))
+con.commit()
+con.close()
+
+
+
+
+
+
