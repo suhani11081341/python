@@ -1,4 +1,4 @@
-lass Robot:
+Class Robot:
     """Represents a robot, with a name."""
 
     # A class variable, counting the number of robots
